@@ -24,6 +24,7 @@ SB_AM.Permissions = {
     PVP = "pvp",
     BUILD = "build",
     NOCLIP = "noclip",
+    PSA = "psa",
     BASIC = "basic",
     FUN = "fun",
     PHYSGUN = "physgun",
@@ -36,36 +37,11 @@ SB_AM.Ranks.List = {
         immunity = 0,
         permissions = { 
             SB_AM.Permissions.BASIC,
-            SB_AM.Permissions.FUN,
-            SB_AM.Permissions.BUILD,
+            SB_AM.Permissions.HELP,
             SB_AM.Permissions.PVP,
-            SB_AM.Permissions.HELP
+            SB_AM.Permissions.BUILD,
         },
         color = Color(241,196,15),
-        canTarget = function(self, target) 
-            return false 
-        end
-    },
-    
-    ["engineer"] = {
-        name = "Инженер",
-        immunity = 1,
-        permissions = {
-            SB_AM.Permissions.BASIC,
-            SB_AM.Permissions.JAIL,
-            SB_AM.Permissions.GOTO,
-            SB_AM.Permissions.RETURNTO,
-            SB_AM.Permissions.BRING,
-            SB_AM.Permissions.UNJAIL,
-            SB_AM.Permissions.MUTE,
-            SB_AM.Permissions.UNMUTE,
-            SB_AM.Permissions.KICK,
-            SB_AM.Permissions.BUILD,
-            SB_AM.Permissions.PVP,
-            SB_AM.Permissions.HELP,
-
-        },
-        color = Color(0,218,199),
         canTarget = function(self, target) 
             return false 
         end
@@ -73,20 +49,46 @@ SB_AM.Ranks.List = {
 
     ["suser"] = {
         name = "Супер Игрок",
-        immunity = 20,
+        immunity = 10,
         permissions = {
-            SB_AM.Permissions.NOCLIP,
             SB_AM.Permissions.BASIC,
-            SB_AM.Permissions.GOTO,
-            SB_AM.Permissions.RETURNTO,
-            SB_AM.Permissions.BRING,
+            SB_AM.Permissions.FUN,
             SB_AM.Permissions.KICK,
-            SB_AM.Permissions.BUILD,
-            SB_AM.Permissions.PVP,
+            SB_AM.Permissions.MUTE,
+            SB_AM.Permissions.UNMUTE,
+            SB_AM.Permissions.GOTO,
+            SB_AM.Permissions.BRING,
+            SB_AM.Permissions.RETURNTO,
             SB_AM.Permissions.HELP,
-
+            SB_AM.Permissions.PVP,
+            SB_AM.Permissions.BUILD,
         },
         color = Color(68,0,255),
+        canTarget = function(self, target) 
+            return false 
+        end
+    },
+
+    ["engineer"] = {
+        name = "Инженер",
+        immunity = 20,
+        permissions = {
+            SB_AM.Permissions.BASIC,
+            SB_AM.Permissions.FUN,
+            SB_AM.Permissions.JAIL,
+            SB_AM.Permissions.UNJAIL,
+            SB_AM.Permissions.KICK,
+            SB_AM.Permissions.MUTE,
+            SB_AM.Permissions.UNMUTE,
+            SB_AM.Permissions.GOTO,
+            SB_AM.Permissions.BRING,
+            SB_AM.Permissions.RETURNTO,
+            SB_AM.Permissions.HELP,
+            SB_AM.Permissions.PVP,
+            SB_AM.Permissions.BUILD,
+            SB_AM.Permissions.NOCLIP,
+        },
+        color = Color(0,218,199),
         canTarget = function(self, target) 
             return false 
         end
@@ -97,19 +99,23 @@ SB_AM.Ranks.List = {
         immunity = 30,
         permissions = {
             SB_AM.Permissions.BASIC,
-            SB_AM.Permissions.GOTO,
-            SB_AM.Permissions.KICK,
+            SB_AM.Permissions.FUN,
             SB_AM.Permissions.JAIL,
             SB_AM.Permissions.UNJAIL,
+            SB_AM.Permissions.KICK,
             SB_AM.Permissions.MUTE,
             SB_AM.Permissions.UNMUTE,
             SB_AM.Permissions.VOTE,
-            SB_AM.Permissions.BUILD,
-            SB_AM.Permissions.PVP,
-            SB_AM.Permissions.PHYSGUN,
+            SB_AM.Permissions.GOTO,
+            SB_AM.Permissions.BRING,
+            SB_AM.Permissions.RETURNTO,
             SB_AM.Permissions.HELP,
+            SB_AM.Permissions.PVP,
+            SB_AM.Permissions.BUILD,
+            SB_AM.Permissions.NOCLIP,
+            SB_AM.Permissions.PHYSGUN,
         },
-        color = Color(46,204,113),
+        color = Color(255,255,255),
         canTarget = function(self, target)
             local targetRank = SB_AM.Ranks.Get(target)
             return targetRank.immunity < self.immunity
@@ -122,21 +128,25 @@ SB_AM.Ranks.List = {
         permissions = {
             SB_AM.Permissions.BASIC,
             SB_AM.Permissions.FUN,
-            SB_AM.Permissions.PHYSGUN,
-            SB_AM.Permissions.ADMIN_CONSOLE,
-            SB_AM.Permissions.KICK,
-            SB_AM.Permissions.JAIL,
-            SB_AM.Permissions.UNJAIL,
-            SB_AM.Permissions.KILL,
-            SB_AM.Permissions.MUTE,
-            SB_AM.Permissions.GOTO,
-            SB_AM.Permissions.BRING,
-            SB_AM.Permissions.UNMUTE,
             SB_AM.Permissions.BAN,
             SB_AM.Permissions.UNBAN,
+            SB_AM.Permissions.JAIL,
+            SB_AM.Permissions.UNJAIL,
+            SB_AM.Permissions.KICK,
+            SB_AM.Permissions.KILL,
+            SB_AM.Permissions.MUTE,
+            SB_AM.Permissions.UNMUTE,
+            SB_AM.Permissions.VOTE,
+            SB_AM.Permissions.GOTO,
+            SB_AM.Permissions.BRING,
+            SB_AM.Permissions.RETURNTO,
             SB_AM.Permissions.HELP,
             SB_AM.Permissions.PVP,
             SB_AM.Permissions.BUILD,
+            SB_AM.Permissions.NOCLIP,
+            SB_AM.Permissions.PSA,
+            SB_AM.Permissions.PHYSGUN,
+            SB_AM.Permissions.ADMIN_CONSOLE,
         },
         color = Color(155,89,182),
         canTarget = function(self, target)
@@ -187,40 +197,26 @@ hook.Add("PlayerUserGroupChanged", "SB_AM_UpdateTeam", function(ply, old, new)
         ply:SetTeam(teamID)
     end
 end)
--- Таймер для проверки рангов и обновления цветов
-timer.Create("SB_AM_UpdateRanks", 10, 0, function()
-
-    if not SB_AM.Ranks or not SB_AM.Ranks.List then return end
-
-    for _, ply in ipairs(player.GetAll()) do
-        if not IsValid(ply) or not ply:IsPlayer() then continue end
-        
-        local userGroup = ply:GetUserGroup()
-        if not userGroup or userGroup == "" then 
-            userGroup = "user"
-        end
-        
-        local teamCommand = "TEAM_" .. string.upper(userGroup)
-        if not _G[teamCommand] then 
-            continue
-        end
-        
-        local currentTeam = ply:Team()
-        local correctTeamID = _G[teamCommand]
-        
-        if correctTeamID and currentTeam != correctTeamID and ply.SetTeam then
-            pcall(function()
-                ply:SetTeam(correctTeamID)
-                hook.Run("SB_AM_RankChanged", ply)
-            end)
-        end
-    end
-end)
 
 local oldGetColor = team.GetColor
 function team.GetColor(teamID)
     if not teamID then return oldGetColor(teamID) end
     
+    local ply = nil
+    for _, p in ipairs(player.GetAll()) do
+        if p:Team() == teamID then
+            ply = p
+            break
+        end
+    end
+    
+    if IsValid(ply) then
+        local userGroup = ply:GetUserGroup()
+        if SB_AM.Ranks.List[userGroup] then
+            return SB_AM.Ranks.List[userGroup].color
+        end
+    end
+
     if SB_AM.TeamIndexToRank and SB_AM.TeamIndexToRank[teamID] then
         local rankID = SB_AM.TeamIndexToRank[teamID]
         return SB_AM.Ranks.List[rankID].color
