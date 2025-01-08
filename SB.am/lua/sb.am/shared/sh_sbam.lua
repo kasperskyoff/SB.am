@@ -115,7 +115,7 @@ SB_AM.Ranks.List = {
             SB_AM.Permissions.NOCLIP,
             SB_AM.Permissions.PHYSGUN,
         },
-        color = Color(255,255,255),
+        color = Color(46,204,113),
         canTarget = function(self, target)
             local targetRank = SB_AM.Ranks.Get(target)
             return targetRank.immunity < self.immunity
@@ -409,10 +409,9 @@ if CLIENT then
 
         local tab = {}
 
-
         local deadcolor = Color( 255, 75, 75)
         local localcolor = Color( 75, 132, 255)
-        local rankColor = SB_AM.Ranks.GetColor(ply)
+        local rankColor = team.GetColor(ply:Team())
         local playerName = ply:Nick()
         rankColor.a = 255
 

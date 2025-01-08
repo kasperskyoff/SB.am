@@ -322,7 +322,6 @@ if SERVER then
     end)
 end
 
-
 -- Имя для консоли
 function SB_AM.GetExecutorName(ply)
     if IsValid(ply) and ply:IsPlayer() then
