@@ -198,6 +198,33 @@ hook.Add("PlayerUserGroupChanged", "SB_AM_UpdateTeam", function(ply, old, new)
     end
 end)
 
+timer.Create("SB_AM_UpdateRanks", 10, 0, function() -- Вернул код. Чтоб игрок не менял свой цвет ранга на другой (модератор или инженер)
+    if not SB_AM.Ranks or not SB_AM.Ranks.List then return end
+    for _, ply in ipairs(player.GetAll()) do
+        if not IsValid(ply) or not ply:IsPlayer() then continue end
+        
+        local userGroup = ply:GetUserGroup()
+        if not userGroup or userGroup == "" then 
+            userGroup = "user"
+        end
+        
+        local teamCommand = "TEAM_" .. string.upper(userGroup)
+        if not _G[teamCommand] then 
+            continue
+        end
+        
+        local currentTeam = ply:Team()
+        local correctTeamID = _G[teamCommand]
+        
+        if correctTeamID and currentTeam != correctTeamID and ply.SetTeam then
+            pcall(function()
+                ply:SetTeam(correctTeamID)
+                hook.Run("SB_AM_RankChanged", ply)
+            end)
+        end
+    end
+end)
+
 local oldGetColor = team.GetColor
 function team.GetColor(teamID)
     if not teamID then return oldGetColor(teamID) end
