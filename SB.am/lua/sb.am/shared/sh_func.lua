@@ -79,6 +79,13 @@ function SB_AM.ToolLog(ply, tool)
 end
 
 function SB_AM.PropSpawnLog(ply, model)
+    local props = ents.GetAll()
+    local lastProp = props[#props]
+    
+    if IsValid(lastProp) and lastProp:GetPhysicsObject():IsValid() then
+        lastProp:GetPhysicsObject():EnableMotion(false)
+    end
+    
     SB_AM.Log(ply:Nick() .. " (" .. ply:SteamID() .. ") заспавнил проп: " .. model, "adminconsole")
 end
 
