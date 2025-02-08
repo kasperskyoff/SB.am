@@ -116,7 +116,7 @@ SB_AM.Commands.addgroup = {
             SaveRank(target:SteamID(), target:Nick(), newRank)
         end
 
-        SB_AM.Log(SB_AM.GetExecutorName(ply) .. " установил игроку " .. target:Nick() .. " (" .. target:SteamID() .. ") ранг " .. SB_AM.Ranks.List[newRank].name, "info")
+        SB_AM.Log(SB_AM.GetExecutorName(ply) .. " установил игроку " .. target:Nick() .. " ( " .. target:SteamID() .. " ) ранг " .. SB_AM.Ranks.List[newRank].name, "info")
     end
 }
 

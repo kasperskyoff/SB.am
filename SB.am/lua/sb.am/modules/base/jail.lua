@@ -116,7 +116,7 @@ SB_AM.Commands.jail = {
         if #targets > 1 then
             SB_AM.Log(SB_AM.GetExecutorName(ply) .. " отправил всех игроков в тюрьму на " .. timeStr .. "! По причине: " .. reason, "info")
         else
-            SB_AM.Log(SB_AM.GetExecutorName(ply) .. " отправил " .. targets[1]:Nick() .. " (" .. targets[1]:SteamID() .. ")" .. " в тюрьму на " .. timeStr .. "! По причине: " .. reason, "info")
+            SB_AM.Log(SB_AM.GetExecutorName(ply) .. " отправил " .. targets[1]:Nick() .. " ( " .. targets[1]:SteamID() .. " ) " .. " в тюрьму на " .. timeStr .. "! По причине: " .. reason, "info")
         end
     end
 }

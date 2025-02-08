@@ -9,7 +9,7 @@ SB_AM.Commands.bring = {
             SB_AM.Log("Серьезно? Консоль телепортирует к себе игрока? Ну ты и рофлан.", "error", ply)
             return
         end
-        
+
         if not SB_AM.Ranks.HasPermission(ply, "bring") then
             SB_AM.Log("У вас нет прав на использование этой команды", "error", ply)
             return
@@ -43,7 +43,7 @@ SB_AM.Commands.bring = {
         
         target:EmitSound("ambient/machines/teleport" .. math.random(1, 4) .. ".wav")
         
-        SB_AM.Log(ply:Nick() .. " телепортировал к себе " .. target:Nick() .. " ( " .. target:SteamID() .. ")", "info")
+        SB_AM.Log(ply:Nick() .. " телепортировал к себе " .. target:Nick() .. " ( " .. target:SteamID() .. " ) ", "info")
     end
 }
 

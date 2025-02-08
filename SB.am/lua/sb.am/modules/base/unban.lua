@@ -83,7 +83,7 @@ SB_AM.Commands.unban = {
         end
 
         local playerName = banInfo.player_name or steamid
-        SB_AM.Log(SB_AM.GetExecutorName(ply) .. " разбанил " .. playerName .. " (" .. steamid .. ")", "info")
+        SB_AM.Log(SB_AM.GetExecutorName(ply) .. " разбанил " .. playerName .. " ( " .. steamid .. " ) ", "info")
     end
 }
 

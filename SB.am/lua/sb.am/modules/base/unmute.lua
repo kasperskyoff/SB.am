@@ -40,7 +40,7 @@ SB_AM.Commands.unmute = {
         net.Send(target)
 
         local executorName = IsValid(ply) and ply:Nick() or "Console"
-        SB_AM.Log(executorName .. " размутил игрока " .. target:Nick() .. " (" .. target:SteamID() .. ")", "info")
+        SB_AM.Log(executorName .. " размутил игрока " .. target:Nick() .. " ( " .. target:SteamID() .. " ) ", "info")
     end
 }
 

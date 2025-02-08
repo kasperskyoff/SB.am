@@ -32,6 +32,7 @@ local function NotifyVoteChoice(player, voteNumber)
     net.Broadcast()
 end
 
+
 local function ProcessVoteResults()
     local results = {
         mostVotes = 0,

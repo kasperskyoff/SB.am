@@ -50,7 +50,7 @@ SB_AM.Commands.mute = {
         end
 
         local adminName = IsValid(ply) and ply:Nick() or "Console"
-        SB_AM.Log(adminName .. " замутил игрока " .. target:Nick() .. " (" .. target:SteamID() .. ")", "info", ply)
+        SB_AM.Log(adminName .. " замутил игрока " .. target:Nick() .. " ( " .. target:SteamID() .. " ) ", "info", ply)
     end
 }
 

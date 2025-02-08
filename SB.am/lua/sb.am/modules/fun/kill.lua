@@ -64,7 +64,7 @@ SB_AM.Commands.kill = {
         if #targets > 1 then
             SB_AM.Log(executorName .. " убил всех игроков", "info")
         else
-            SB_AM.Log(executorName .. " убил игрока " .. targets[1]:Nick() .. " (" .. targets[1]:SteamID() .. ")", "info")
+            SB_AM.Log(executorName .. " убил игрока " .. targets[1]:Nick() .. " ( " .. targets[1]:SteamID() .. " ) ", "info")
         end
     end
 }

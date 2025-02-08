@@ -46,7 +46,7 @@ SB_AM.Commands.goto = {
         
         ply:EmitSound("ambient/machines/teleport" .. math.random(1, 4) .. ".wav")
         
-        SB_AM.Log(ply:Nick() .. " телепортировался к " .. target:Nick() .. " ( " .. target:SteamID() .. ")", "info")
+        SB_AM.Log(ply:Nick() .. " телепортировался к " .. target:Nick() .. " ( " .. target:SteamID() .. " ) ", "info")
     end
 }
 

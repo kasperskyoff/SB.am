@@ -53,7 +53,7 @@ SB_AM.Commands.kick = {
         if #targets > 1 then
             SB_AM.Log(executorName .. " кикнул всех игроков " .. "по причине: " .. reason, "info")
         else
-            SB_AM.Log(executorName .. " кикнул игрока " .. targets[1]:Nick() .. " (" .. targets[1]:SteamID() .. ")" .. " по причине: " .. reason, "info")
+            SB_AM.Log(executorName .. " кикнул игрока " .. targets[1]:Nick() .. " ( " .. targets[1]:SteamID() .. " ) " .. " по причине: " .. reason, "info")
         end
     end
 }

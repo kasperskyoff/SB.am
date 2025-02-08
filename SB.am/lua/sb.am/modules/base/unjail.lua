@@ -56,7 +56,7 @@ SB_AM.Commands.unjail = {
         if #targets > 1 then
             SB_AM.Log(executorName .. " освободил всех игроков из тюрьмы!", "info")
         else
-            SB_AM.Log(executorName .. " освободил " .. targets[1]:Nick() .. " (" .. targets[1]:SteamID() .. ")" .. " из тюрьмы!", "info")
+            SB_AM.Log(executorName .. " освободил " .. targets[1]:Nick() .. " ( " .. targets[1]:SteamID() .. " ) " .. " из тюрьмы!", "info")
         end
     end
 }

@@ -11,7 +11,7 @@ if SERVER then
             message = message,
             logType = logType or "info"
         }
-    
+
         if logType == "error" or logType == "info" then
             net.Start("SB_AM_AddLog")
             net.WriteTable(logEntry)

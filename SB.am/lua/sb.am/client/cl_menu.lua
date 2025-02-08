@@ -188,7 +188,7 @@ function SunBoxAdminMenu()
         local commandData = SB_AM.Commands[command]
         local description = commandData.Description or "Нет описания"
         local rank = GetAvailableRanks(command)
-        
+		
         local fullDescription = description .. "\n\nДоступно с: " .. rank
         descriptionPanel:SetText(fullDescription)
     end
