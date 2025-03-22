@@ -40,7 +40,7 @@ function SunBoxAdminMenu()
             end
         end
     end
-    
+
     frame.Paint = function(self, w, h)
         draw.RoundedBox(20, 0, 30, w, 600, Color(20, 20, 20, 240))
         draw.RoundedBox(5, 16, 0, 230, 30, Color(20, 20, 20, 240))

@@ -228,7 +228,7 @@ hook.Add("CheckPassword", "SB_AM_CheckBanConnection", function(steamID64, ipAddr
         local playerName = banData.player_name or "Unknown"
         
         if tonumber(banData.unban_time) == 0 then
-            SB_AM.Log(playerName .. " (" .. steamID .. ") попытался зайти на сервер но у него блокировка по причине: " .. reason, "info", nil, true)
+            SB_AM.Log(playerName .. " (" .. steamID .. ") попытался зайти на сервер, но у него блокировка по причине: " .. reason, "info", nil, true)
             
             return false, [[Солнечный Sandbox
 
