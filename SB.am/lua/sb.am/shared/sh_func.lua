@@ -117,6 +117,37 @@ if SERVER then
             target:GodDisable()
         end
     end)
+
+    hook.Add("PhysgunPickup", "SB_AM_AllowSuperadminPhysgunWorld", function(ply, ent)
+        if not IsValid(ent) then return end
+        if ent:CreatedByMap() then
+            local rank = SB_AM.Ranks.Get(ply)
+            if rank == SB_AM.Ranks.List["superadmin"] then
+                return true
+            end
+        end
+    end)
+
+    hook.Add("CanTool", "SB_AM_AllowSuperadminToolWorld", function(ply, tr, tool)
+        local ent = tr.Entity
+        if not IsValid(ent) then return end
+        if ent:CreatedByMap() then
+            local rank = SB_AM.Ranks.Get(ply)
+            if rank == SB_AM.Ranks.List["superadmin"] then
+                return true
+            end
+        end
+    end)
+
+    hook.Add("CanPlayerUnfreeze", "SB_AM_AllowSuperadminUnfreezeWorld", function(ply, ent)
+        if not IsValid(ent) then return end
+        if ent:CreatedByMap() then
+            local rank = SB_AM.Ranks.Get(ply)
+            if rank == SB_AM.Ranks.List["superadmin"] then
+                return true
+            end
+        end
+    end)
 end
 -----------------------------------------
 
